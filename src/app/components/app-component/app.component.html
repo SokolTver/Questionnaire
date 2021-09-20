@@ -1,0 +1,14 @@
+<header></header>
+
+<div class="wrapper">
+  <div class="content">
+    <div class="card-item" (click)="onClick(item)" *ngFor="let item of getItems()">
+        <div *ngIf="item.show">
+        {{item.text}}
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<footer></footer>
