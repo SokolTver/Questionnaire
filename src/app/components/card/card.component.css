@@ -1,0 +1,13 @@
+.card-item {
+  border: 1px solid #000;
+  width: 200px;
+  height: 250px;
+  flex: 0 1 auto;
+  margin: 10px;
+  flex-wrap: wrap;
+  /* Оформление внутри карточки */
+  text-align: center;
+  padding: 20px 10px;
+  font-family: cursive;
+  font-size: 12pt;
+}

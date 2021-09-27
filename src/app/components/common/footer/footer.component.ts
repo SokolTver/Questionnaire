@@ -9,10 +9,9 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  footerText: string;
+
   constructor() {
     this.footerText = `© ${new Date().getFullYear()}`;
   }
-
-  // переменные обычно над конструктором описываются
-  footerText: string;
 }

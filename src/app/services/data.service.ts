@@ -8,10 +8,7 @@ export class DataService {
 
   constructor() { }
 
-  // это набор значений, которые могут меняться в способе получения
-  // на выход лучше отдавать метод - возвращающий набор данных, он будет стабильным
-  // а внутренная переменная может внутри меняться в способах получения как угодно
-  questItems: CardModel[] = [
+  private questItems: CardModel[] = [
     { id: 0, text: "first"},
     { id: 1, text: "second"},
     { id: 2, text: "third"},
@@ -22,4 +19,8 @@ export class DataService {
     { id: 7, text: "еще какой-то текст"},
     { id: 8, text: "последняя карточка"}
   ]
+
+  get getQuestItems() {
+    return this.questItems;
+  }
 }
