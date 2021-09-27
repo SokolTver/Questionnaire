@@ -1,8 +1,11 @@
+/* стили не на своем месте, https://angular.io/guide/component-styles#special-selectors*/
 header {
   border-bottom: 1px solid black;
   text-align: center;
 }
 
+/* тут можно общие стили, если это какой-то общий
+часто используемый wrapper для всего приложения */
 .wrapper {
   display: flex;
   justify-content: center;
@@ -15,6 +18,7 @@ header {
   width: 700px;
 }
 
+/* стиль для карточки должен лежать в компоненте карточки */
 .card-item {
   border: 1px solid #000;
   width: 200px;

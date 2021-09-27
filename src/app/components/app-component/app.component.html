@@ -1,7 +1,10 @@
 <header></header>
 
+<!--Основной контент тоже можно вынести в отдельный компонент-->
 <div class="wrapper">
+<!-- Плохие-абстрактные имена классов -->
   <div class="content">
+<!--      То, что ниже, очень похоже на отдельный компонент типа "Карточка" -->
     <div class="card-item" (click)="onClick(item)" *ngFor="let item of getItems()">
         <div *ngIf="item.show">
         {{item.text}}
