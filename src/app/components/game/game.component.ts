@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardModelEx, cardModelToEx } from 'src/app/models/card/card.model';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'game',
