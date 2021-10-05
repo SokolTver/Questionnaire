@@ -1,7 +1,7 @@
 {
   "version": 1,
   "projects": {
-    "Questionnaire": {
+    "questionnaire": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -20,7 +20,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Questionnaire:build"
+            "browserTarget": "questionnaire:build"
           }
         },
         "lint": {

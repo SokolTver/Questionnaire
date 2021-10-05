@@ -1,0 +1,12 @@
+<div *ngIf="visibility" class="modal-dialog">
+  <div class="header">
+    {{caption}}
+  </div>
+  <div class="dialog-content">
+    {{text}}
+  </div>
+  <div class="footer">
+    <button (click)="okClick">{{okButtonText}}</button>
+    <button (click)="cancelClick">{{cancelButtonText}}</button>
+  </div>
+</div>
