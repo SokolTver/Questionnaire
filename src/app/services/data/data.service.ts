@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CardModel } from '../models/card/card.model'
+import { CardModel } from '../../models/card/card.model'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ export class DataService {
 
   constructor() { }
 
-  questItems: CardModel[] = [
+  private questItems: CardModel[] = [
     { id: 0, text: "first"},
     { id: 1, text: "second"},
     { id: 2, text: "third"},
@@ -19,4 +19,8 @@ export class DataService {
     { id: 7, text: "еще какой-то текст"},
     { id: 8, text: "последняя карточка"}
   ]
+
+  get getQuestItems() {
+    return this.questItems;
+  }
 }

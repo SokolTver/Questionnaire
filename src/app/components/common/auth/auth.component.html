@@ -1,0 +1,9 @@
+<div class="user-block">
+  {{userName}}
+
+  <button *ngIf="!isAuthorized" (click)="onLoginClick()">Войти</button>
+</div>
+
+<dialog text="Тест" caption="Тестовый заголовок" [visibility]="dialogVisible" [open]="dialogVisible">
+  Text
+</dialog>
