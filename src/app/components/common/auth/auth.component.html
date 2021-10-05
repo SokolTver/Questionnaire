@@ -4,6 +4,6 @@
   <button *ngIf="!isAuthorized" (click)="onLoginClick()">Войти</button>
 </div>
 
-<dialog text="Тест" caption="Тестовый заголовок" [visibility]="dialogVisible" [open]="dialogVisible">
-  Text
+<dialog [open]="dialogVisible">
+  <auth-dialog (confirm)="onOk($event)" (cancel)="onCancel()"></auth-dialog>
 </dialog>

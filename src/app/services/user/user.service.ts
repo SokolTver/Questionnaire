@@ -12,10 +12,12 @@ export class UserService {
 
   constructor() { }
 
-  checkUser(name: string, password: string) {
+  checkUser(name: string, password: string): boolean {
     if (name === this.admName && Md5.hashAsciiStr(password) === this.admPass) {
       console.log('Adm is loged in')
+      return true;
     }
+    return false;
   }
 
   get getUserName(): string {

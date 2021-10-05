@@ -1,0 +1,21 @@
+<div class="modal-dialog">
+  <div class="header">
+    Авторизация
+  </div>
+
+  <div class="dialog-content">
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+
+      <label for="login">Логин: </label>
+      <input id="login" type="text" formControlName="login">
+
+      <label for="password">Пароль: </label>
+      <input id="password" type="password" formControlName="password">
+
+      <button type="submit" [disabled]="!authForm.valid">Войти</button>
+      <button type="reset" (click)="onCancelClick()">Отмена</button>
+
+    </form>
+  </div>
+
+</div>
