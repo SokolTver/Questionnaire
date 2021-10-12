@@ -12,19 +12,22 @@ import { AuthComponent } from './components/common/auth/auth.component';
 import { AuthDialogComponent } from './components/common/auth-dialog/auth-dialog.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { RouterModule, Routes } from '@angular/router';
-import {APP_BASE_HREF} from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
+import { AuthGuard } from './services/auth-guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const routes: Routes = [
     { path: '', component: GameComponent },
-    { path: 'administrating', component: AdminPanelComponent },
+    { path: 'administrating', component: AdminPanelComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
-    imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes) ],
+    imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), BrowserAnimationsModule, MatTooltipModule ],
     exports:      [ RouterModule ],
     declarations: [ AppComponent, FooterComponent, HeaderComponent, CardComponent, GameComponent, AuthComponent, AuthDialogComponent, AdminPanelComponent ],
     bootstrap:    [ AppComponent ],
-    providers:    [ DataService, UserService, {provide: APP_BASE_HREF, useValue : '/' } ]
+    providers:    [ DataService, UserService, AuthGuard, {provide: APP_BASE_HREF, useValue : '/' } ]
 })
 
 export class AppModule { }

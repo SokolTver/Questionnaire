@@ -1,9 +1,10 @@
 <div class="user-block">
   {{userName}}
 
-  <button *ngIf="!isAuthorized" (click)="onLoginClick()">Войти</button>
+  <button mat-button *ngIf="!isAuthorized" (click)="onLoginClick()">Войти</button>
+  <button mat-button *ngIf="isAuthorized" (click)="onLogoutClick()">Выйти</button>
 </div>
 
 <dialog [open]="dialogVisible">
-  <auth-dialog (confirm)="onOk($event)" (cancel)="onCancel()"></auth-dialog>
+  <auth-dialog (confirm)="onOk()" (cancel)="onCancel()"></auth-dialog>
 </dialog>

@@ -1,9 +1,9 @@
-export class CardModel {
+export interface CardModel {
   id: number;
   text: string;
 }
 
-export class CardModelEx extends CardModel {
+export interface CardModelEx extends CardModel {
   show: boolean;
 }
 

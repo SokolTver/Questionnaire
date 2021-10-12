@@ -1,19 +1,41 @@
+<div class="dialog-header">
+  Авторизация
+</div>
 <div class="modal-dialog">
-  <div class="header">
-    Авторизация
-  </div>
 
   <div class="dialog-content">
-    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <div class="auth-error" *ngIf="loginFailed">Логин или пароль пользователя введен не правильно</div>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="auth-form">
 
-      <label for="login">Логин: </label>
-      <input id="login" type="text" formControlName="login">
+      <div>
+        <label for="login">Логин: </label>
+      </div>
+      <div>
+        <input 
+          id="login"
+          type="text"
+          formControlName="login"
+          mat-raised-button
+          [matTooltip]="loginError"
+          [matTooltipDisabled]="loginHasError">
+      </div>
 
-      <label for="password">Пароль: </label>
-      <input id="password" type="password" formControlName="password">
+      <div>
+        <label for="password">Пароль: </label>
+      </div>
+      <div>
+        <input
+          id="password"
+          type="password"
+          [value]="passwordValue"
+          formControlName="password"
+          mat-raised-button
+          [matTooltip]="passwordError"
+          [matTooltipDisabled]="passwordHasError">
+      </div>
 
-      <button type="submit" [disabled]="!authForm.valid">Войти</button>
-      <button type="reset" (click)="onCancelClick()">Отмена</button>
+      <button mat-stroked-button color="primary" type="submit" [disabled]="!authForm.valid">Войти</button>
+      <button mat-stroked-button type="reset" (click)="onCancelClick()">Отмена</button>
 
     </form>
   </div>

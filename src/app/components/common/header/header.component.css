@@ -2,3 +2,8 @@
   border-bottom: 1px solid black;
   text-align: center;
 }
+
+.header a, .header a:hover {
+  color: black;
+  text-decoration: none;
+}
