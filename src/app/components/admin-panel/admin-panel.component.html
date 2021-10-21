@@ -1,1 +1,11 @@
-<p>admin-panel works!</p>
+
+<div>
+  <input type="text" placeholder="Поиск..." (keyup)="onFilterInput($event)" />
+</div>
+
+<div class="cards-list">
+
+  <card-edit [content]="item" [number]="i + 1" *ngFor="let item of cardsFiltered; let i = index"></card-edit>
+  <div *ngIf="cardsFiltered?.length == 0">Карточки не найдены</div>
+
+</div>

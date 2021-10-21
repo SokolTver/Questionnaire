@@ -18,13 +18,13 @@ export class AuthComponent {
     this.updateUserStatus();
   }
 
-  onLogoutClick() {
-    this.userService.logout();
-    this.updateUserStatus();
-  }
-
-  onLoginClick() {
-    this.dialogVisible = true;
+  onAuthClick() {
+    if (this.userService.isAuthorized) {
+      this.userService.logout();
+      this.updateUserStatus();
+    } else {
+      this.dialogVisible = true;
+    }
   }
 
   onOk() {

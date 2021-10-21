@@ -1,8 +1,7 @@
 <div class="user-block">
   {{userName}}
 
-  <button mat-button *ngIf="!isAuthorized" (click)="onLoginClick()">Войти</button>
-  <button mat-button *ngIf="isAuthorized" (click)="onLogoutClick()">Выйти</button>
+  <button mat-button (click)="onAuthClick()">{{isAuthorized ? 'Выйти' : 'Войти'}}</button>
 </div>
 
 <dialog [open]="dialogVisible">

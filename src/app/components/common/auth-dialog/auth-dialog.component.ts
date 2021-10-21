@@ -28,15 +28,14 @@ export class AuthDialogComponent {
     this.loginFailed = false;
   }
 
-  onSubmit() {
+  async onSubmit() {
     var {login, password} = this.authForm.value;
 
-    const user = this.userService.login(login, password);
+    const user = await this.userService.login(login, password);
     if (user != null) {
       this.generateForm();
       this.confirm.emit()
     } else {
-      console.log(this.authForm);
       this.passwordValue = "";
       this.loginFailed = true;
     }

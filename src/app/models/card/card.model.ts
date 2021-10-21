@@ -1,6 +1,8 @@
 export interface CardModel {
   id: number;
   text: string;
+  enabled?: boolean;
+  dateEdit?: Date;
 }
 
 export interface CardModelEx extends CardModel {

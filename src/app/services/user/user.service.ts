@@ -18,7 +18,7 @@ export class UserService {
 
   constructor(private router: Router) { }
 
-  login(name: string, password: string): UserModel {
+  async login(name: string, password: string): Promise<UserModel> {
     console.log(Md5.hashAsciiStr(password));
     if (name === this.admName && Md5.hashAsciiStr(password) === this.admPass) {
       console.log('Adm is loged in');
