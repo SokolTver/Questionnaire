@@ -1,0 +1,7 @@
+.button-group {
+  text-align: right;
+}
+
+.button-group > button.btn.btn-default.btn-sm {
+  margin-right: 5px;
+}

@@ -1,7 +1,7 @@
 <div class="user-block">
   {{userName}}
 
-  <button mat-button (click)="onAuthClick()">{{isAuthorized ? 'Выйти' : 'Войти'}}</button>
+  <button class="btn btn-default btn-sm" (click)="onAuthClick()">{{isAuthorized ? 'Выйти' : 'Войти'}}</button>
 </div>
 
 <dialog [open]="dialogVisible">

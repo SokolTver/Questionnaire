@@ -12,6 +12,6 @@ export class GameComponent {
   cards: CardModelEx[];
 
   constructor(private dataService: DataService) { 
-    this.cards = this.dataService.getQuestItems.map(cardModelToEx);
+    this.cards = this.dataService.getQuestItems.filter(f => f.enabled).slice(0, 9).map(cardModelToEx);
   }
 }
