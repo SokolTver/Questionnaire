@@ -1,9 +1,9 @@
 <div class="user-block">
   {{userName}}
 
-  <button *ngIf="!isAuthorized" (click)="onLoginClick()">Войти</button>
+  <button class="btn btn-default btn-sm" (click)="onAuthClick()">{{isAuthorized ? 'Выйти' : 'Войти'}}</button>
 </div>
 
-<dialog text="Тест" caption="Тестовый заголовок" [visibility]="dialogVisible" [open]="dialogVisible">
-  Text
+<dialog [open]="dialogVisible">
+  <auth-dialog (confirm)="onOk()" (cancel)="onCancel()"></auth-dialog>
 </dialog>

@@ -1,0 +1,21 @@
+<div [class]="'card-item panel panel-' + (content.enabled ? 'primary' : 'default')">
+  <div class="panel-body">
+    <div class="col-xs-2 col-sm-1">
+      {{number}}.
+    </div>
+    <div *ngIf="!content.isEditMode" class="col-xs-8 col-sm-9">
+      {{content.text}}
+    </div>
+    <div *ngIf="content.isEditMode" class="col-xs-8 col-sm-9">
+      <textarea class="form-control" (keyup)="onTextChange($event)">{{content.text}}</textarea>
+    </div>
+    <div class="button-group col-xs-2">
+      <button class="btn btn-default btn-sm" (click)="doEditCard()">
+        <span [class]="content.isEditMode ? 'glyphicon glyphicon-floppy-disk' : 'glyphicon glyphicon-pencil'" aria-hidden="true"></span>
+      </button>
+      <button class="btn btn-default btn-sm" (click)="doDeleteCard()">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div>

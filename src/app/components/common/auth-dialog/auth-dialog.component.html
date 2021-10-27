@@ -1,0 +1,43 @@
+<div class="dialog-header">
+  Авторизация
+</div>
+<div class="modal-dialog">
+
+  <div class="dialog-content">
+    <div class="auth-error" *ngIf="loginFailed">Логин или пароль пользователя введен не правильно</div>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="auth-form">
+
+      <div>
+        <label for="login">Логин: </label>
+      </div>
+      <div>
+        <input 
+          id="login"
+          type="text"
+          formControlName="login"
+          mat-raised-button
+          [matTooltip]="loginError"
+          [matTooltipDisabled]="loginHasError">
+      </div>
+
+      <div>
+        <label for="password">Пароль: </label>
+      </div>
+      <div>
+        <input
+          id="password"
+          type="password"
+          [value]="passwordValue"
+          formControlName="password"
+          mat-raised-button
+          [matTooltip]="passwordError"
+          [matTooltipDisabled]="passwordHasError">
+      </div>
+
+      <button mat-stroked-button color="primary" type="submit" [disabled]="!authForm.valid">Войти</button>
+      <button mat-stroked-button type="reset" (click)="onCancelClick()">Отмена</button>
+
+    </form>
+  </div>
+
+</div>

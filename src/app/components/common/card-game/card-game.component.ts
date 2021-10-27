@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { CardModelEx } from 'src/app/models/card/card.model';
 
 @Component({
-  selector: 'card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'card-game',
+  templateUrl: './card-game.component.html',
+  styleUrls: ['./card-game.component.css']
 })
-export class CardComponent {
+export class CardGameComponent {
 
   @Input() content: CardModelEx;
 

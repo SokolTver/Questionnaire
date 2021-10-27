@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserModel } from 'src/app/models/user/user';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -12,14 +14,34 @@ export class AuthComponent {
   isAuthorized: boolean;
   dialogVisible: boolean = false;
 
-  constructor(private userService: UserService) {
-    this.userName = userService.getUserName;
-    this.isAuthorized = userService.isAuthorized;
+  constructor(private userService: UserService, private router: Router) {
+    this.updateUserStatus();
   }
 
-  onLoginClick() {
-    this.dialogVisible = true;
+  onAuthClick() {
+    if (this.userService.isAuthorized) {
+      this.userService.logout();
+      this.updateUserStatus();
+    } else {
+      this.dialogVisible = true;
+    }
+  }
 
-    this.userService.checkUser("adm", "123");
+  onOk() {
+    this.dialogVisible = false;
+
+    if (this.userService.isAdmin) {
+      this.router.navigateByUrl('/administrating');
+    }
+    this.updateUserStatus();
+  }
+
+  onCancel() {
+    this.dialogVisible = false;
+  }
+
+  updateUserStatus() {
+    this.userName = this.userService.getUserName;
+    this.isAuthorized = this.userService.isAuthorized;
   }
 }

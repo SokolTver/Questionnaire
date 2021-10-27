@@ -1,0 +1,24 @@
+
+<div class="nav-panel form-inline">
+  <div class="form-group">
+    <input type="text" placeholder="Поиск..." (keyup)="onFilterInput($event)" class="form-control" />
+  </div>
+
+  <button (click)="onCardAdd()" class="btn btn-default">
+    Добавить карточку
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </button>
+</div>
+
+<div class="cards-list">
+
+  <card-edit [content]="item"
+    [number]="i + 1"
+    (cardEdit)="onCardEdit($event)"
+    (cardDelete)="onCardDelete($event)"
+    *ngFor="let item of cardsFiltered; let i = index">
+  </card-edit>
+
+  <div *ngIf="cardsFiltered?.length === 0">Карточки не найдены</div>
+
+</div>

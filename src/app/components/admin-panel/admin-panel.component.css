@@ -1,0 +1,15 @@
+.cards-list {
+  width: 700px;
+}
+
+.nav-panel {
+  padding: 20px 0;
+}
+
+.nav-panel > button {
+  float: right;
+}
+
+.nav-panel > button > span {
+  font-size: 12px;
+}

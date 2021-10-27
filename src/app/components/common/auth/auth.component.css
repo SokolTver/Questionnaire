@@ -2,5 +2,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 22px 15px;
+  padding: 11px 15px;
+}
+
+dialog {
+  top: calc(50% - 200px);
+  border-radius: 7px;
+  border-width: 2px;
+  overflow: hidden;
 }
